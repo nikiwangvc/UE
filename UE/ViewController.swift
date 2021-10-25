@@ -15,18 +15,20 @@ class ViewController: UIViewController{
     func createButton(){
         let button = UIButton(frame:CGRect(x: 0, y: 0, width: 200, height: 200))
         button.center = view.center
-        button.configuration = createConfig()
+        button.configuration = .RecordButton()
         view.addSubview(button)
     }
-
-    func createConfig() -> UIButton.Configuration{
+}
+//using extension UIButton to add more buttons in the future
+extension UIButton.Configuration{
+    static func RecordButton() -> UIButton.Configuration{
         var config: UIButton.Configuration = .tinted()
         config.baseBackgroundColor = .systemGreen
         config.title = "Start"
         config.subtitle = "Recording"
         config.cornerStyle = .large
         //assign true to show activity using a spinner
-        config.showsActivityIndicator = true
+        config.showsActivityIndicator = false
         return config
     }
 }
