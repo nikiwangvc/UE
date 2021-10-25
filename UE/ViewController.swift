@@ -12,20 +12,16 @@ class ViewController: UIViewController{
         createButton()
     }
     func createButton(){
-        let button = UIButton(frame:CGRect(x: 0, y: 0, width: 200, height: 500))
+        let button = UIButton(frame:CGRect(x: 0, y: 0, width: 200, height: 200))
         button.center = view.center
-        if #available(iOS 15.0, *) {
-            button.configuration = createConfig()
-        } else {
-            // Fallback on earlier versions
-        }
+        button.configuration = createConfig()
         view.addSubview(button)
     }
-    
-    @available(iOS 15.0, *)
+
     func createConfig() -> UIButton.Configuration{
-        let config: UIButton.Configuration = .filled()
-        
+        var config: UIButton.Configuration = .tinted()
+        config.baseBackgroundColor = .systemGreen
+        config.title = "Start recording"
         return config
     }
 }
