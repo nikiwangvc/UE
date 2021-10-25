@@ -21,7 +21,11 @@ class ViewController: UIViewController{
     func createConfig() -> UIButton.Configuration{
         var config: UIButton.Configuration = .tinted()
         config.baseBackgroundColor = .systemGreen
-        config.title = "Start recording"
+        config.title = "Start"
+        config.subtitle = "Recording"
+        config.cornerStyle = .large
+        //assign true to show activity using a spinner
+        config.showsActivityIndicator = true
         return config
     }
 }
