@@ -7,10 +7,19 @@
 
 import UIKit
 import Auth0
-class ViewController: UIViewController{
+import CoreLocation
+
+class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad(){
         super.viewDidLoad()
         createButton()
+        // Create a CLLocationManager and assign a delegate
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+
+        // Use requestWhenInUseAuthorization if you only need
+        // location updates when the user is using your app
+        locationManager.requestWhenInUseAuthorization()
     }
     func createButton(){
         let button = UIButton(frame:CGRect(x: 0, y: 0, width: 150, height: 150))
@@ -18,9 +27,14 @@ class ViewController: UIViewController{
         button.configuration = .RecordButton()
         //https://medium.com/doyeona/uibutton-swift-uiaction-closure-based-uicontrol-ios-14-405e255a7640
 //        button.addTarget(self, action: #selector(login), for: .touchUpInside)
+        button.addTarget(self, action: #selector(recordTrip), for: .touchUpInside)
         view.addSubview(button)
     }
-//
+    
+    @objc func recordTrip(){
+
+    }
+    
 //    @objc func login(){
 //        Auth0
 //            .webAuth()
