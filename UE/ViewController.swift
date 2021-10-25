@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Auth0
 class ViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
