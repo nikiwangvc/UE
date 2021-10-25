@@ -16,7 +16,28 @@ class ViewController: UIViewController{
         let button = UIButton(frame:CGRect(x: 0, y: 0, width: 150, height: 150))
         button.center = view.center
         button.configuration = .RecordButton()
+        //https://medium.com/doyeona/uibutton-swift-uiaction-closure-based-uicontrol-ios-14-405e255a7640
+        button.addTarget(self, action: #selector(login), for: .touchUpInside)
         view.addSubview(button)
+    }
+    
+    @objc func login(){
+        Auth0
+            .webAuth()
+            .scope("openid profile")
+            .audience("https://dev-zojyaz8i.us.auth0.com/userinfo")
+            .start { result in
+                switch result {
+                case .failure(let error):
+                    // Handle the error
+                    print("Error: \(error)")
+                case .success(let credentials):
+                    // Do something with credentials e.g.: save them.
+                    // Auth0 will automatically dismiss the login page
+                    print("Credentials: \(credentials)")
+                }
+        }
+        print("logged in!!")
     }
 }
 //using extension UIButton to add more buttons in the future
