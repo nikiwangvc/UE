@@ -5,14 +5,14 @@
 //  Created by Niki Wang on 10/25/21.
 //
 
-import UIKit
-import Auth0
-import CoreLocation
+import UIKit // for ui
+import Auth0 // for login
+import CoreLocation // for location tracking
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad(){
         super.viewDidLoad()
-        createButton()
+        createButtons() // creates login button and location tracking button
         // Create a CLLocationManager and assign a delegate
         let locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -58,7 +58,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Handle failure to get a user’s location
     }
     
-    func createButton(){
+    func createButtons(){
+        print("creating buttons")
         let button = UIButton(frame:CGRect(x: 0, y: 0, width: 150, height: 150))
         button.center = view.center
         button.configuration = .RecordButton()
