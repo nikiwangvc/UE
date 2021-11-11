@@ -8,53 +8,86 @@
 import UIKit // for ui
 import Auth0 // for login
 import CoreLocation // for location tracking
+// https://www.appsdeveloperblog.com/determine-users-current-location-example-in-swift/
+// trying this tutorial ^^ instead of one I was using before
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
+    // creates a variable called locationManager
+    // of type CLLocationManager (that's what : is used for)
+    // and we're sure it's not null or undefined (that's what the ! is for)
+    var locationManager:CLLocationManager!
     override func viewDidLoad(){
+        print("view did load")
         super.viewDidLoad()
         createButtons() // creates login button and location tracking button
         // Create a CLLocationManager and assign a delegate
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
+//        let locationManager = CLLocationManager()
+//        locationManager.delegate = self
 
         // Use requestWhenInUseAuthorization if you only need
         // location updates when the user is using your app
-        locationManager.requestWhenInUseAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
         // Start updating location
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
 
         // Make sure to stop updating location when your
         // app no longer needs location updates
 //        locationManager.stopUpdatingLocation()
     }
     
-    // https://www.advancedswift.com/user-location-in-swift/
-    func locationManager(
-        _ manager: CLLocationManager,
-        didChangeAuthorization status: CLAuthorizationStatus
-    ) {
-        print("permissions changed")
-        // Handle changes if location permissions
+    // might remove this
+    override func didReceiveMemoryWarning(){
+        super.didReceiveMemoryWarning()
+        // "dispose of any resources that can be recreated
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        determineMyCurrentLocation()
+    }
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+            
+    }
+    
+    // https://www.advancedswift.com/user-location-in-swift/
+//    func locationManager(
+//        _ manager: CLLocationManager,
+//        didChangeAuthorization status: CLAuthorizationStatus
+//    ) {
+//        print("permissions changed")
+//        // Handle changes if location permissions
+//    }
 
     func locationManager(
         _ manager: CLLocationManager,
         didUpdateLocations locations: [CLLocation]
     ) {
-        if let location = locations.last {
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-            // Handle location update
-            print(latitude)
-            print(longitude)
-        }
+        let userLocation:CLLocation = locations[0] as CLLocation
+//        if let location = locations.last {
+//            let latitude = location.coordinate.latitude
+//            let longitude = location.coordinate.longitude
+//            // Handle location update
+//            print(latitude)
+//            print(longitude)
+//        }
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
     }
 
     func locationManager(
         _ manager: CLLocationManager,
         didFailWithError error: Error
     ) {
-        print("error")
+        print("Error \(error)")
         // Handle failure to get a user’s location
     }
     
