@@ -12,7 +12,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var distanceTraveled:Double = 0
     override func viewDidLoad(){
         super.viewDidLoad()
-        createButtons() // creates login button and location tracking button
+//        createButtons() // creates login button and location tracking button
     }
     
     // https://www.appsdeveloperblog.com/determine-users-current-location-example-in-swift/
