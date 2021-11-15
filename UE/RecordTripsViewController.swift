@@ -23,6 +23,7 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBOutlet weak var DistanceTraveledLabel: UILabel!
     // if user's location has changed, update distance traveled
     func locationManager(
         _ manager: CLLocationManager,
@@ -41,6 +42,7 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         print("user latitude = \(currentLatitude)")
         print("user longitude = \(currentLongitude)")
         print("distance traveled = \(distanceTraveled)")
+        DistanceTraveledLabel.text = "Distance Traveled \(distanceTraveled) meters"
     }
     
     // handle errors
@@ -59,10 +61,10 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         if(!tripInProgress){
             locationManager.stopUpdatingLocation()
             // https://stackoverflow.com/questions/26326296/changing-text-of-uibutton-programmatically-swift
-            RecordTripButton.setTitle("Start Trip", for: .normal);
+            RecordTripButton.setTitle("Start Trip", for: .normal)
         }
         else {
-            RecordTripButton.setTitle("Stop Trip", for: .normal);
+            RecordTripButton.setTitle("Stop Trip", for: .normal)
             determineMyCurrentLocation()
         }
     }
