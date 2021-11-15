@@ -9,7 +9,34 @@ class ViewController: UIViewController{
 //        createButtons() // creates login button and location tracking button
     }
     
-//    func createButtons(){
+
+    @IBOutlet var Email: UITextField!
+    @IBOutlet var Password: UITextField!
+    
+    
+    @IBAction func Login(_ sender: Any) {
+    }
+    
+    
+    @IBAction func createAccountTapped(_ sender: Any) {
+        //connect it with signin page
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "signup")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc,animated:true)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //    func createButtons(){
 //        let button = UIButton(frame:CGRect(x: 0, y: 0, width: 150, height: 150))
 //        button.center = view.center
 //        button.configuration = .RecordButton()
