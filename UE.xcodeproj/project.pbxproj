@@ -16,6 +16,7 @@
 		3259A80627272ECA00DDFA57 /* UETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259A80527272ECA00DDFA57 /* UETests.swift */; };
 		3259A81027272ECA00DDFA57 /* UEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259A80F27272ECA00DDFA57 /* UEUITests.swift */; };
 		3259A81227272ECA00DDFA57 /* UEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259A81127272ECA00DDFA57 /* UEUITestsLaunchTests.swift */; };
+		327670202742F6E7005049DF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276701F2742F6E7005049DF /* SignupViewController.swift */; };
 		8E199EC22727351800A868AE /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8E199EC12727351800A868AE /* Auth0 */; };
 		8EF3414B2742C381006FCFE5 /* RecordTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		3259A80B27272ECA00DDFA57 /* UEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3259A80F27272ECA00DDFA57 /* UEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEUITests.swift; sourceTree = "<group>"; };
 		3259A81127272ECA00DDFA57 /* UEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UEUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3276701F2742F6E7005049DF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTripsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				3259A7F027272EC700DDFA57 /* SceneDelegate.swift */,
 				3259A7F227272EC700DDFA57 /* LoginViewController.swift */,
 				3259A7F427272EC700DDFA57 /* Main.storyboard */,
+				3276701F2742F6E7005049DF /* SignupViewController.swift */,
 				3259A7F727272ECA00DDFA57 /* Assets.xcassets */,
 				3259A7F927272ECA00DDFA57 /* LaunchScreen.storyboard */,
 				3259A7FC27272ECA00DDFA57 /* Info.plist */,
@@ -271,6 +274,7 @@
 			files = (
 				8EF3414B2742C381006FCFE5 /* RecordTripsViewController.swift in Sources */,
 				3259A7F327272EC700DDFA57 /* LoginViewController.swift in Sources */,
+				327670202742F6E7005049DF /* SignupViewController.swift in Sources */,
 				3259A7EF27272EC700DDFA57 /* AppDelegate.swift in Sources */,
 				3259A7F127272EC700DDFA57 /* SceneDelegate.swift in Sources */,
 			);
