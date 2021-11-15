@@ -7,6 +7,9 @@ import CoreLocation // for location tracking
 class ViewController: UIViewController, CLLocationManagerDelegate{
     var locationManager:CLLocationManager! // : means "of type" ! means we know the value isn't undefined or null
     var tripInProgress = false
+    var previousLocation:CLLocation!
+    var firstCoordinateFound = false
+    var distanceTraveled:Double = 0
     override func viewDidLoad(){
         super.viewDidLoad()
         createButtons() // creates login button and location tracking button
@@ -28,8 +31,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         didUpdateLocations locations: [CLLocation]
     ) {
         let userLocation:CLLocation = locations[0] as CLLocation
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
+        if (!firstCoordinateFound){
+            firstCoordinateFound = true
+        }
+        else {
+            distanceTraveled += userLocation.distance(from:previousLocation) // in meters
+        }
+        previousLocation = userLocation
+        let currentLatitude = userLocation.coordinate.latitude
+        let currentLongitude = userLocation.coordinate.longitude
+        print("user latitude = \(currentLatitude)")
+        print("user longitude = \(currentLongitude)")
+        print("distance traveled = \(distanceTraveled)")
     }
 
     func locationManager(
