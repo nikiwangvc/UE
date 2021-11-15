@@ -6,16 +6,13 @@ import CoreLocation // for location tracking
 class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager! // : means "of type" ! means we know the value isn't undefined or null
-    var tripInProgress = false
-    var previousLocation:CLLocation!
-    var firstCoordinateFound = false
+    var tripInProgress = false // determine if clicking button should start or stop trip
+    var previousLocation:CLLocation! // to calculate distance
+    var firstCoordinateFound = false // we don't want to calculate distance until we have two sets of coordinates
     var distanceTraveled:Double = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // https://www.appsdeveloperblog.com/determine-users-current-location-example-in-swift/
+    // gets users current location if allowed
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -26,6 +23,7 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // if user's location has changed, update distance traveled
     func locationManager(
         _ manager: CLLocationManager,
         didUpdateLocations locations: [CLLocation]
@@ -45,6 +43,7 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         print("distance traveled = \(distanceTraveled)")
     }
     
+    // handle errors
     func locationManager(
         _ manager: CLLocationManager,
         didFailWithError error: Error
@@ -52,12 +51,18 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         print("Error \(error)")
     }
     
+    @IBOutlet weak var RecordTripButton: UIButton!
+    // https://www.dev2qa.com/ios-add-click-event-to-uibutton-swift-example/
+    // what happens when button is clicked
     @IBAction func RecordTrip(_ sender: Any) {
         tripInProgress = !tripInProgress
         if(!tripInProgress){
             locationManager.stopUpdatingLocation()
+            // https://stackoverflow.com/questions/26326296/changing-text-of-uibutton-programmatically-swift
+            RecordTripButton.setTitle("Start Trip", for: .normal);
         }
         else {
+            RecordTripButton.setTitle("Stop Trip", for: .normal);
             determineMyCurrentLocation()
         }
     }

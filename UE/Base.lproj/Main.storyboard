@@ -36,6 +36,9 @@
                         <viewLayoutGuide key="safeArea" id="D93-O2-ZHq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="RecordTripButton" destination="YkI-CT-C3u" id="CFP-hZ-3qs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fme-5d-YRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
