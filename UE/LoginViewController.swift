@@ -1,13 +1,15 @@
 //  Created by Niki Wang and Jeffrey Kozik on 10/25/21.
 
 import UIKit // for ui
-//import Auth0 // for login
+import AuthenticationServices
+import Firebase // for login
 
 class ViewController: UIViewController{
     
-    @IBOutlet weak var email: UITextField!
+
+    @IBOutlet weak var Email: UITextField!
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var Password: UITextField!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -20,14 +22,15 @@ class ViewController: UIViewController{
     }
     
     
-//    @IBAction func createAccountTapped(_ sender: Any) {
-//        //connect it with signin page
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "signup")
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc,animated:true)
-//    }
-//
+    @IBAction func SignupTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "signup")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc,animated:true)
+    }
+    
+
+
     
 }
     

@@ -80,9 +80,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Already have an account? Login">
                                     <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="loginAccountTapped:" destination="I7i-3Z-obr" eventType="touchUpInside" id="n4z-LP-uP6"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-UT-aGh">
                                 <rect key="frame" x="57" y="269" width="300" height="34"/>
@@ -92,14 +89,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-dV-eFx">
-                                <rect key="frame" x="171" y="433" width="73" height="31"/>
+                                <rect key="frame" x="171" y="433" width="73" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up">
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="signup:" destination="I7i-3Z-obr" eventType="touchUpInside" id="J5x-Fa-hqf"/>
+                                    <action selector="signup:" destination="I7i-3Z-obr" eventType="touchUpInside" id="5g8-sL-BPl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,8 +104,6 @@
                         <color key="backgroundColor" red="1" green="0.92549019610000005" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
-                        <outlet property="Email" destination="9Cd-UT-aGh" id="oBv-n0-vVC"/>
-                        <outlet property="Password" destination="PUD-aD-47N" id="dUO-hS-8Lq"/>
                         <outlet property="email" destination="9Cd-UT-aGh" id="VnU-LQ-z26"/>
                         <outlet property="password" destination="PUD-aD-47N" id="Tm6-24-3bR"/>
                     </connections>
@@ -158,9 +153,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
-                                                                <connections>
-                                                                    <action selector="Email:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="eL6-kK-9gM"/>
-                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -218,16 +210,12 @@
                                                         <integer key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O9K-TU-gSH"/>
-                                                    <action selector="signin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzO-73-SC8"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="8" left="25" bottom="8" right="25"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwJ-cb-jpR">
-                                        <rect key="frame" x="0.0" y="417" width="425" height="362"/>
+                                        <rect key="frame" x="0.0" y="417" width="425" height="372.5"/>
                                         <color key="backgroundColor" red="1" green="0.92542805210000001" blue="0.78553709869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="0.92542805210000001" blue="0.78553709869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <userDefinedRuntimeAttributes>
@@ -237,26 +225,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Emj-Go-86q">
-                                        <rect key="frame" x="0.0" y="787" width="425" height="31"/>
+                                        <rect key="frame" x="0.0" y="797.5" width="425" height="20.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yQ8-Lu-ACh">
-                                                <rect key="frame" x="84.5" y="0.0" width="256" height="31"/>
+                                                <rect key="frame" x="86.5" y="0.0" width="252" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-aJ-Fhu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-3g-E7d">
-                                                        <rect key="frame" x="183" y="0.0" width="73" height="31"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signup" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-A4-cMU">
+                                                        <rect key="frame" x="183" y="0.0" width="69" height="20.5"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="signup"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Sign up">
-                                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="createAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPt-uC-mHW"/>
-                                                        </connections>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Signup"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -278,12 +262,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="axh-FN-NZJ" secondAttribute="bottom" id="l0s-oP-hcV"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="Email" destination="IHb-jx-yrl" id="59M-bQ-43P"/>
-                        <outlet property="Password" destination="lfD-5S-iCc" id="ypP-FN-xs9"/>
-                        <outlet property="email" destination="IHb-jx-yrl" id="0Cj-iH-6zf"/>
-                        <outlet property="password" destination="lfD-5S-iCc" id="6TM-ba-UVw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

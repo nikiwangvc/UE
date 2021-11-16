@@ -1,0 +1,6 @@
+framework module Pods_UE_UEUITests {
+  umbrella header "Pods-UE-UEUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
