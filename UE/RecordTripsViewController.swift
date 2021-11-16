@@ -3,7 +3,7 @@
 import UIKit
 import CoreLocation // for location tracking
 
-class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
+class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager! // : means "of type" ! means we know the value isn't undefined or null
     var tripInProgress = false // determine if clicking button should start or stop trip
@@ -22,6 +22,7 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
     }
+    
     
     @IBOutlet weak var DistanceTraveledLabel: UILabel!
     // if user's location has changed, update distance traveled
@@ -53,20 +54,64 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         print("Error \(error)")
     }
     
+    
+    
+    
     @IBOutlet weak var RecordTripButton: UIButton!
     // https://www.dev2qa.com/ios-add-click-event-to-uibutton-swift-example/
     // what happens when button is clicked
+    
+    
     @IBAction func RecordTrip(_ sender: Any) {
         tripInProgress = !tripInProgress
-        if(!tripInProgress){
-            locationManager.stopUpdatingLocation()
-            // https://stackoverflow.com/questions/26326296/changing-text-of-uibutton-programmatically-swift
-            RecordTripButton.setTitle("Start Trip", for: .normal)
+            if(!tripInProgress){
+                locationManager.stopUpdatingLocation()
+                // https://stackoverflow.com/questions/26326296/changing-text-of-uibutton-programmatically-swift
+                RecordTripButton.setTitle("Start Trip", for: .normal)
+            }
+            else {
+                RecordTripButton.setTitle("Stop Trip", for: .normal)
+                determineMyCurrentLocation()
+            }
+    }
+    
+    
+    
+    
+    @IBAction func TripHistory(_ sender: Any) {
+    let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let tripHistoryViewController = mainStoryBoard.instantiateViewController(withIdentifier: "TripHistoryViewController") as! TripHistoryViewController
+        tripHistoryViewController.modalPresentationStyle = .overFullScreen
+        self.present(tripHistoryViewController, animated: true, completion: nil)
         }
-        else {
-            RecordTripButton.setTitle("Stop Trip", for: .normal)
-            determineMyCurrentLocation()
-        }
+    
+    
+    
+    
+    @IBAction func Friends(_ sender: Any) {
+    let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let FriendsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
+        FriendsViewController.modalPresentationStyle = .overFullScreen
+        self.present(FriendsViewController, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    @IBAction func Profile(_ sender: Any) {
+    let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let ProfileViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        ProfileViewController.modalPresentationStyle = .overFullScreen
+        self.present(ProfileViewController, animated: true, completion: nil)
+    }
+    
+     
+    
+    @IBAction func Graphs(_ sender: Any) {
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let GraphsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GraphsViewController") as! GraphsViewController
+        GraphsViewController.modalPresentationStyle = .overFullScreen
+        self.present(GraphsViewController, animated: true, completion: nil)
     }
     
     /*
