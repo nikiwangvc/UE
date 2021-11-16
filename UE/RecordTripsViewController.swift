@@ -69,6 +69,13 @@ class RecordTripViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func TripHistory(_ sender: Any) {
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let tripHistoryViewController = mainStoryBoard.instantiateViewController(withIdentifier: "TripHistoryViewController") as! TripHistoryViewController
+        tripHistoryViewController.modalPresentationStyle = .overFullScreen
+        self.present(tripHistoryViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

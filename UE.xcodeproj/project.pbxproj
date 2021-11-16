@@ -21,6 +21,7 @@
 		3276702E2744186D005049DF /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276702D2744186D005049DF /* NewSignUpViewController.swift */; };
 		8E199EC22727351800A868AE /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8E199EC12727351800A868AE /* Auth0 */; };
 		8EF3414B2742C381006FCFE5 /* RecordTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */; };
+		8EF3414D27434403006FCFE5 /* TripHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3414C27434403006FCFE5 /* TripHistoryViewController.swift */; };
 		B43CA67DA4898D2C4FFD2DF7 /* Pods_UETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C6BBAA9F56983607BD2F25 /* Pods_UETests.framework */; };
 		B74757C859CF2E83EF20FF16 /* Pods_UE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C9C997796EF5F1CFB93A7 /* Pods_UE.framework */; };
 		C21E29F621D45E90E8D55AE2 /* Pods_UE_UEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB77FA6F139B077F5972CEA6 /* Pods_UE_UEUITests.framework */; };
@@ -66,6 +67,7 @@
 		5A0D84E51D4928D3D230ED46 /* Pods-UE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UE.release.xcconfig"; path = "Target Support Files/Pods-UE/Pods-UE.release.xcconfig"; sourceTree = "<group>"; };
 		665C9C997796EF5F1CFB93A7 /* Pods_UE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTripsViewController.swift; sourceTree = "<group>"; };
+		8EF3414C27434403006FCFE5 /* TripHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewController.swift; sourceTree = "<group>"; };
 		98AA462AEAB67B995673ECC8 /* Pods-UE-UEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UE-UEUITests.release.xcconfig"; path = "Target Support Files/Pods-UE-UEUITests/Pods-UE-UEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9728BFF518178C2293AFD04 /* Pods-UE-UEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UE-UEUITests.debug.xcconfig"; path = "Target Support Files/Pods-UE-UEUITests/Pods-UE-UEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB77FA6F139B077F5972CEA6 /* Pods_UE_UEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UE_UEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,8 +141,13 @@
 				3259A7EE27272EC700DDFA57 /* AppDelegate.swift */,
 				3259A7F027272EC700DDFA57 /* SceneDelegate.swift */,
 				3259A7F427272EC700DDFA57 /* Main.storyboard */,
+<<<<<<< HEAD
 				3276702B2744185F005049DF /* NewLoginViewController.swift */,
 				3276702D2744186D005049DF /* NewSignUpViewController.swift */,
+=======
+				8EF3414C27434403006FCFE5 /* TripHistoryViewController.swift */,
+				3276701F2742F6E7005049DF /* SignupViewController.swift */,
+>>>>>>> main
 				3259A7F727272ECA00DDFA57 /* Assets.xcassets */,
 				3259A7F927272ECA00DDFA57 /* LaunchScreen.storyboard */,
 				3259A7FC27272ECA00DDFA57 /* Info.plist */,
@@ -428,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32767026274331B7005049DF /* FirebaseAuthManager.swift in Sources */,
+				8EF3414D27434403006FCFE5 /* TripHistoryViewController.swift in Sources */,
 				8EF3414B2742C381006FCFE5 /* RecordTripsViewController.swift in Sources */,
 				3259A7EF27272EC700DDFA57 /* AppDelegate.swift in Sources */,
 				3276702C2744185F005049DF /* NewLoginViewController.swift in Sources */,
