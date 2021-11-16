@@ -27,11 +27,10 @@ class SignupViewController: UIViewController {
     
     
     @IBAction func login(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "login")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc,animated:true)
+//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+//        let loginViewController = mainStoryBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        loginViewController.modalPresentationStyle = .overFullScreen
+//        self.present(loginViewController,animated:true, completion: nil)
     }
     
-
 }

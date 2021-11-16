@@ -15,23 +15,12 @@ class ViewController: UIViewController{
         super.viewDidLoad()
 //        createButtons() // creates login button and location tracking button
     }
-    
-
-    
-    @IBAction func Login(_ sender: Any) {
+    @IBAction func SignupClicked(_ sender: Any) {
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+        let signupViewController = mainStoryBoard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        signupViewController.modalPresentationStyle = .overFullScreen
+        self.present(signupViewController,animated:true, completion: nil)
     }
-    
-    
-    @IBAction func SignupTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "signup")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc,animated:true)
-    }
-    
-
-
-    
 }
     
     
