@@ -109,6 +109,8 @@
                     <connections>
                         <outlet property="Email" destination="9Cd-UT-aGh" id="oBv-n0-vVC"/>
                         <outlet property="Password" destination="PUD-aD-47N" id="dUO-hS-8Lq"/>
+                        <outlet property="email" destination="9Cd-UT-aGh" id="VnU-LQ-z26"/>
+                        <outlet property="password" destination="PUD-aD-47N" id="Tm6-24-3bR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2t-PK-7RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,6 +281,8 @@
                     <connections>
                         <outlet property="Email" destination="IHb-jx-yrl" id="59M-bQ-43P"/>
                         <outlet property="Password" destination="lfD-5S-iCc" id="ypP-FN-xs9"/>
+                        <outlet property="email" destination="IHb-jx-yrl" id="0Cj-iH-6zf"/>
+                        <outlet property="password" destination="lfD-5S-iCc" id="6TM-ba-UVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
