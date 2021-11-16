@@ -346,21 +346,13 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< Updated upstream
         <image name="Screen Shot 2021-11-16 at 4.14.32 PM" width="518" height="542"/>
         <image name="Screen Shot 2021-11-16 at 4.24.59 PM" width="814" height="354"/>
         <image name="Screen Shot 2021-11-16 at 4.29.57 PM" width="356" height="150"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
         <image name="Screen Shot 2021-11-14 at 10.50.12 PM" width="806" height="732"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
->>>>>>> Stashed changes
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
