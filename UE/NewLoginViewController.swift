@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class NewLoginViewController: UIViewController {
 
@@ -17,19 +19,81 @@ class NewLoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //a function to check whether the user has logged in previously
+    //if logged in before then directly go to the distance travel page
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
+    }
     
     
     @IBAction func loginTapped(_ sender: Any) {
+        validateLogin()
     }
     
     @IBAction func createSignUpTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let viewc = storyboard.instantiateViewController(withIdentifier: "newsignup")
         viewc.modalPresentationStyle = .overFullScreen
         present(viewc,animated:true)
         
     }
     
+    func validateLogin(){
+        if email.text?.isEmpty == true {
+            print("Please enter your email.")
+            // Create new Alert
+            let dialogMessage = UIAlertController(title: "Attention", message: "Please enter your email", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+             })
+            
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
+            return
+        }
+        if password.text?.isEmpty == true {
+            print("Please enter your password.")
+            // Create new Alert
+            let dialogMessage = UIAlertController(title: "Attention", message: "Please enter your password", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+             })
+            
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
+            return
+        }
+        
+        login()
+    }
     
+    func login(){
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!){[weak self]authResult,err in
+            guard let strongSelf = self else {return}
+            if let err = err {
+                print(err.localizedDescription)
+            }
+            self!.checkUserInfo()
+    }
+    
+    }
+    
+    func checkUserInfo(){
+        if Auth.auth().currentUser != nil{
+            print(Auth.auth().currentUser?.uid)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let viewc = storyboard.instantiateViewController(withIdentifier: "RecordTripsViewController")
+            viewc.modalPresentationStyle = .overFullScreen
+            present(viewc,animated:true)
+        }
+    }
 }
