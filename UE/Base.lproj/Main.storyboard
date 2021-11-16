@@ -215,7 +215,7 @@
                                         <edgeInsets key="layoutMargins" top="8" left="25" bottom="8" right="25"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwJ-cb-jpR">
-                                        <rect key="frame" x="0.0" y="417" width="425" height="362"/>
+                                        <rect key="frame" x="0.0" y="417" width="425" height="372.5"/>
                                         <color key="backgroundColor" red="1" green="0.92542805210000001" blue="0.78553709869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="0.92542805210000001" blue="0.78553709869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <userDefinedRuntimeAttributes>
@@ -225,23 +225,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Emj-Go-86q">
-                                        <rect key="frame" x="0.0" y="787" width="425" height="31"/>
+                                        <rect key="frame" x="0.0" y="797.5" width="425" height="20.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yQ8-Lu-ACh">
-                                                <rect key="frame" x="84.5" y="0.0" width="256" height="31"/>
+                                                <rect key="frame" x="86.5" y="0.0" width="252" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-aJ-Fhu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-3g-E7d">
-                                                        <rect key="frame" x="183" y="0.0" width="73" height="31"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signup" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-A4-cMU">
+                                                        <rect key="frame" x="183" y="0.0" width="69" height="20.5"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="signup"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Sign up">
-                                                            <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="tinted" title="Signup"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
