@@ -111,12 +111,12 @@ class NewLoginViewController: UIViewController {
             viewc.modalPresentationStyle = .overFullScreen
             present(viewc,animated:true)
         }
-        else {
-            let dialogMessage = UIAlertController(title: "Wrong Email or Password", message: "Wrong Email or Password", preferredStyle: .alert)
-            // Create OK button with action handler
-            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        else if email.text?.isEmpty == false {
+                let dialogMessage = UIAlertController(title: "Wrong Email or Password", message: "Wrong Email or Password", preferredStyle: .alert)
+                // Create OK button with action handler
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
-             })
+                })
             
             //Add OK button to a dialog message
             dialogMessage.addAction(ok)
