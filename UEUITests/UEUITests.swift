@@ -10,6 +10,8 @@ import XCTest
 class UEUITests: XCTestCase {
     var app: XCUIApplication!
     
+    // https://www.hackingwithswift.com/articles/148/xcode-ui-testing-cheat-sheet
+    // ^ this link is helpful
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -68,6 +70,8 @@ class UEUITests: XCTestCase {
         app.alerts["Attention"].scrollViews.otherElements.buttons["OK"].tap()
         
     }
+    
+    
     func testExample() throws {
         // UI tests must launch the application that they test.
         app.launch()

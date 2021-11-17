@@ -21,13 +21,15 @@ class UETests: XCTestCase {
     
 
     func testThatDistanceUpdatesWhenStartPressed() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssert(true)
-//        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
-//        let RecordTripsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RecordTripsViewController") as! RecordTripsViewController
-//        RecordTripsViewController.modalPresentationStyle = .overFullScreen
-//        self.present(RecordTripsViewController, animated: true, completion: nil)
+        // https://stackoverflow.com/questions/53756455/how-to-write-unit-test-for-button-tap
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let RecordTripsViewController = mainStoryboard   .instantiateViewController(withIdentifier: "RecordTripsViewController") as! RecordTripsViewController
+        RecordTripsViewController.loadViewIfNeeded()
+        RecordTripsViewController.RecordTrip(self)
+//        RecordTripsViewController.RecordTripButton?.sendActions(for: .touchUpInside)
+        // https://stackoverflow.com/questions/40073738/how-to-get-the-current-title-of-a-button-in-swift-3-0-ios-using-sender-titlefo
+        XCTAssertEqual(RecordTripsViewController.RecordTripButton.currentTitle!, "Stop Trip")
+//        XCTAssertTrue(true)
     }
 
     func testPerformanceExample() throws {
