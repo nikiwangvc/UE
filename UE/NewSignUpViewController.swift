@@ -8,6 +8,9 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseCore
+import FirebaseFirestore
+//import FirebaseFirestoreSwift
 
 class NewSignUpViewController: UIViewController {
 
@@ -16,6 +19,12 @@ class NewSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // [START setup]
+        let settings = FirestoreSettings()
+
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
@@ -81,6 +90,10 @@ class NewSignUpViewController: UIViewController {
                 print("Error \(error?.localizedDescription)")
                 return
             }
+            print("UID \(Auth.auth().currentUser?.uid)")
+            db.collection("users").document(Auth.auth().currentUser?.uid).setData([
+                "email": email.text!
+            ])
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecordTripsViewController")
             vc?.modalPresentationStyle = .overFullScreen

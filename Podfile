@@ -16,6 +16,7 @@ target 'UE' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod'Firebase/Core'
   pod'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   target 'UETests' do
     inherit! :search_paths

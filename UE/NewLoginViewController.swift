@@ -33,9 +33,9 @@ class NewLoginViewController: UIViewController {
     
     //a function to check whether the user has logged in previously
     //if logged in before then directly go to the distance travel page
-//    override func viewDidAppear(_ animated: Bool) {
-//        checkUserInfo()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        checkUserInfo()
+    }
     
     
     @IBAction func loginTapped(_ sender: Any) {
