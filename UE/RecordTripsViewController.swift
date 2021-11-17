@@ -2,6 +2,8 @@
 
 import UIKit
 import CoreLocation // for location tracking
+import FirebaseAuth
+import Firebase
 
 class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -114,6 +116,18 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
         self.present(GraphsViewController, animated: true, completion: nil)
     }
     
+    @IBAction func Logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "newlogin")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc,animated:true)
+    }
     /*
     // MARK: - Navigation
 
@@ -125,3 +139,9 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     */
 
 }
+
+
+// calculating sustainability score
+// 20 pounds CO2 released for 1 gallon gas
+// that's 0.01 tons CO2
+// 
