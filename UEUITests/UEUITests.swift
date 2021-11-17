@@ -16,7 +16,6 @@ class UEUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         
-        let app = XCUIApplication()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -27,6 +26,46 @@ class UEUITests: XCTestCase {
 
     func testLogin() throws{
         app.launch()
+    
+        //login functionality
+        app.textFields["Email"].tap()
+        app.textFields["Password"].tap()
+       
+        app.buttons["Get Started"].tap()
+        app.otherElements["RecordTripsView"].tap()
+        //logout button is on the home page
+        //indicates signing in successfully
+        app/*@START_MENU_TOKEN@*/.staticTexts["Logout"]/*[[".otherElements[\"RecordTripsView\"]",".buttons[\"Logout\"].staticTexts[\"Logout\"]",".staticTexts[\"Logout\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        //Don't have an account functionality
+        app/*@START_MENU_TOKEN@*/.staticTexts["Don't have an account?"]/*[[".buttons[\"Don't have an account?\"].staticTexts[\"Don't have an account?\"]",".staticTexts[\"Don't have an account?\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //Navigate to signUp page
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
+        app.buttons["Sign Up"].tap()
+        app.alerts["Attention"].scrollViews.otherElements.buttons["OK"].tap()
+        
+    }
+    
+    func testSignup() throws{
+        app.launch()
+        
+        //SignUp for a new account
+        XCUIApplication()/*@START_MENU_TOKEN@*/.staticTexts["Don't have an account?"]/*[[".buttons[\"Don't have an account?\"].staticTexts[\"Don't have an account?\"]",".staticTexts[\"Don't have an account?\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Don't have an account?"]/*[[".buttons[\"Don't have an account?\"].staticTexts[\"Don't have an account?\"]",".staticTexts[\"Don't have an account?\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.textFields["Email"].tap()
+        app.textFields["Password"].tap()
+        
+        app.buttons["Sign Up"].tap()
+        //logout button is on the home page
+        //indicates signing up successfully
+        app/*@START_MENU_TOKEN@*/.staticTexts["Logout"]/*[[".otherElements[\"RecordTripsView\"]",".buttons[\"Logout\"].staticTexts[\"Logout\"]",".staticTexts[\"Logout\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        //Already have an account
+        app/*@START_MENU_TOKEN@*/.staticTexts["Already have an account? Login"]/*[[".buttons[\"Already have an account? Login\"].staticTexts[\"Already have an account? Login\"]",".staticTexts[\"Already have an account? Login\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        //login page: "Get started" is a login button
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Get Started"]/*[[".buttons[\"Get Started\"].staticTexts[\"Get Started\"]",".staticTexts[\"Get Started\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.alerts["Attention"].scrollViews.otherElements.buttons["OK"].tap()
         
     }
     func testExample() throws {
