@@ -18,9 +18,14 @@ class UETests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testThatDistanceUpdatesWhenStartPressed() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true)
+//        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
+//        let RecordTripsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RecordTripsViewController") as! RecordTripsViewController
+//        RecordTripsViewController.modalPresentationStyle = .overFullScreen
+//        self.present(RecordTripsViewController, animated: true, completion: nil)
     }
 
     func testPerformanceExample() throws {

@@ -16,6 +16,7 @@ class NewSignUpViewController: UIViewController {
 
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,9 +92,18 @@ class NewSignUpViewController: UIViewController {
                 return
             }
             print("UID \(Auth.auth().currentUser?.uid)")
-            db.collection("users").document(Auth.auth().currentUser?.uid).setData([
-                "email": email.text!
-            ])
+            let uidString = Auth.auth().currentUser?.uid
+            self.db.collection("users").document(uidString!).setData([
+                "email": self.email.text!
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+            
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecordTripsViewController")
             vc?.modalPresentationStyle = .overFullScreen
