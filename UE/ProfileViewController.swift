@@ -7,14 +7,31 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+// https://www.ioscreator.com/tutorials/picker-ios-tutorial
+class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var SustainabilityUnitPicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        SustainabilityUnitPicker.delegate = self
+        SustainabilityUnitPicker.dataSource = self
     }
     
+    let units = ["Polar Bears Saved","Trees Planted","Tons of CO2 Emissions Reduced"]
+    
+    func numberOfComponents(in SustainabilityUnitPicker: UIPickerView) -> Int {
+        return 1
+    }
+        
+    func pickerView(_ SustainabilityUnitPicker: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return units.count
+    }
+    
+    func pickerView(_ SustainabilityUnitPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return units[row]
+    }
 
     @IBAction func Home(_ sender: Any) {
         let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
