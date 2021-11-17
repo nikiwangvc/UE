@@ -395,10 +395,6 @@
                                     <action selector="loginTapped:" destination="mXF-bo-V0W" eventType="touchUpInside" id="wra-og-DLU"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2021-11-16 at 4.14.32 PM" translatesAutoresizingMaskIntoConstraints="NO" id="qs3-xa-c9u">
-                                <rect key="frame" x="10" y="44" width="394" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2021-11-16 at 4.29.57 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Syb-15-dNe">
                                 <rect key="frame" x="130" y="314" width="125" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -415,6 +411,10 @@
                                     <action selector="createSignUpTapped:" destination="mXF-bo-V0W" eventType="touchUpInside" id="K3J-ac-6dZ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2021-11-16 at 4.14.32 PM" translatesAutoresizingMaskIntoConstraints="NO" id="qs3-xa-c9u">
+                                <rect key="frame" x="10" y="33" width="394" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nuK-GX-dgm"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
