@@ -12,7 +12,7 @@
         <scene sceneID="1nz-Ks-St0">
             <objects>
                 <viewController storyboardIdentifier="RecordTripsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CLb-CL-OQu" customClass="RecordTripsViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6sa-y3-1AK">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="RecordTripsView" id="6sa-y3-1AK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -30,9 +30,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTg-te-iXQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RecordTripButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTg-te-iXQ">
                                 <rect key="frame" x="144" y="249" width="126" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="RecordTripButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start Recording"/>
                                 <connections>
@@ -133,6 +134,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zKt-c7-31p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="RecordTripsView"/>
                     </view>
                     <connections>
                         <outlet property="DistanceTraveledLabel" destination="JAn-JU-g42" id="VW8-2G-tKJ"/>

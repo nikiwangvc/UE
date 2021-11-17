@@ -26,7 +26,14 @@ class UEUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        
+        // https://uxdesign.cc/your-first-uitest-in-swift-847bc5595c26
+        let recordTripButton = app.buttons["RecordTripButton"]
+        XCTAssertFalse(recordTripButton.isSelected)
+        recordTripButton.tap()
+        XCTAssertEqual("Stop Trip", recordTripButton.label)
+//        XCTAssertTrue(recordTripButton.isSelected)
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
