@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 // https://www.ioscreator.com/tutorials/picker-ios-tutorial
 class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var SustainabilityUnitPicker: UIPickerView!
     
+    @IBOutlet var resetButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +42,28 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         RecordTripsViewController.modalPresentationStyle = .overFullScreen
         self.present(RecordTripsViewController, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func resetPasswordTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "resetPassword")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc,animated:true)
+    }
+    
+    @IBAction func LogoutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "newlogin")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc,animated:true)
+    }
+
     /*
     // MARK: - Navigation
 

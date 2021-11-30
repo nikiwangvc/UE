@@ -18,8 +18,10 @@ class NewSignUpViewController: UIViewController {
     @IBOutlet var password: UITextField!
     var db: Firestore!
     
+    @IBOutlet var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+50)
         // [START setup]
         let settings = FirestoreSettings()
 
@@ -105,7 +107,7 @@ class NewSignUpViewController: UIViewController {
             
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecordTripsViewController")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
             vc?.modalPresentationStyle = .overFullScreen
             self.present(vc!,animated:true)
         }

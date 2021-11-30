@@ -13,9 +13,11 @@ class NewLoginViewController: UIViewController {
 
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
-    
+    @IBOutlet var forgotPassword: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+50)
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
@@ -24,6 +26,8 @@ class NewLoginViewController: UIViewController {
 
         view.addGestureRecognizer(tap)
     }
+
+    
 
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
@@ -107,7 +111,7 @@ class NewLoginViewController: UIViewController {
             print("UID \(Auth.auth().currentUser?.uid)")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let viewc = storyboard.instantiateViewController(withIdentifier: "RecordTripsViewController")
+            let viewc = storyboard.instantiateViewController(withIdentifier: "tabBarController")
             viewc.modalPresentationStyle = .overFullScreen
             present(viewc,animated:true)
         }
@@ -124,5 +128,11 @@ class NewLoginViewController: UIViewController {
             self.present(dialogMessage, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewc = storyboard.instantiateViewController(withIdentifier: "forgotPassword")
+        viewc.modalPresentationStyle = .overFullScreen
+        present(viewc,animated:true)
 }
-
+}
