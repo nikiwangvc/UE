@@ -15,6 +15,8 @@ class NewLoginViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var forgotPassword: UIButton!
     @IBOutlet var scrollView: UIScrollView!
+    var modelController: ModelController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+50)
@@ -108,12 +110,15 @@ class NewLoginViewController: UIViewController {
     
     func checkUserInfo(){
         if Auth.auth().currentUser != nil{
+            let thisUid = Auth.auth().currentUser?.uid
+            modelController.uid = Auth.auth().currentUser?.uid ?? "no uid"
             print("UID \(Auth.auth().currentUser?.uid)")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let viewc = storyboard.instantiateViewController(withIdentifier: "tabBarController")
             viewc.modalPresentationStyle = .overFullScreen
             present(viewc,animated:true)
+
         }
         else if email.text?.isEmpty == false {
                 let dialogMessage = UIAlertController(title: "Wrong Email or Password", message: "Wrong Email or Password", preferredStyle: .alert)
@@ -134,5 +139,11 @@ class NewLoginViewController: UIViewController {
         let viewc = storyboard.instantiateViewController(withIdentifier: "forgotPassword")
         viewc.modalPresentationStyle = .overFullScreen
         present(viewc,animated:true)
-}
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let RecordTripsViewController = segue.destination as? RecordTripsViewController {
+            RecordTripsViewController.modelController = modelController
+        }
+    }
 }
