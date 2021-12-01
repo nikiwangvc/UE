@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-1861" y="-271"/>
         </scene>
-        <!--Start-->
+        <!--Record-->
         <scene sceneID="1nz-Ks-St0">
             <objects>
-                <viewController storyboardIdentifier="RecordTripsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CLb-CL-OQu" customClass="RecordTripsViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordTripsViewController" title="Record" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CLb-CL-OQu" customClass="RecordTripsViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="RecordTripsView" id="6sa-y3-1AK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +124,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="RecordTripsView"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Start" image="record.circle" catalog="system" id="mga-9Q-GKF">
+                    <tabBarItem key="tabBarItem" title="Record" image="record.circle" catalog="system" id="mga-9Q-GKF">
                         <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageReference key="selectedImage" image="record.circle" catalog="system" symbolScale="default"/>
                     </tabBarItem>
@@ -349,58 +349,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hD9-ik-bcV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="450"/>
-        </scene>
-        <!--Forgot Pass View Controller-->
-        <scene sceneID="tJR-UG-IoF">
-            <objects>
-                <viewController storyboardIdentifier="forgotPassword" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wye-nv-6BS" customClass="ForgotPassViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kct-AL-UtG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-iy-Bz5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BU8-C9-Fz1">
-                                        <rect key="frame" x="-3" y="-60" width="417" height="344"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg5-Q6-sgV">
-                                        <rect key="frame" x="178" y="456" width="58" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Send"/>
-                                        <connections>
-                                            <action selector="sendButtonTapped:" destination="Wye-nv-6BS" eventType="touchUpInside" id="SHp-pe-luC"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-mB-Ft4">
-                                        <rect key="frame" x="87" y="387" width="240" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="ILY-mj-ZDR"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="7LR-xT-uRc"/>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ran-WN-9O0"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem title="back" style="plain" id="plB-Kh-zbu">
-                            <imageReference key="image" image="arrowshape.turn.up.left.fill" catalog="system" symbolScale="medium"/>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dX1-U6-niW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1862.3188405797102" y="-1702.2321428571429"/>
         </scene>
         <!--New Login View Controller-->
         <scene sceneID="cGP-Yd-R29">
@@ -646,7 +594,6 @@
     <resources>
         <image name="Transparent-login" width="1294" height="2000"/>
         <image name="Transparent-signup" width="1294" height="2000"/>
-        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>

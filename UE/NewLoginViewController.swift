@@ -135,15 +135,51 @@ class NewLoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewc = storyboard.instantiateViewController(withIdentifier: "forgotPassword")
-        viewc.modalPresentationStyle = .overFullScreen
-        present(viewc,animated:true)
-    }
+        
+        if (email.text?.isEmpty == false) {
+//            if Auth.auth().currentUser == nil{
+//                print("User does not exist")
+//                let dialogMessage = UIAlertController(title: "User does not exist", message: "Please check your email or proceed to sign up.", preferredStyle: .alert)
+//
+//            // Create OK button with action handler
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+//                print("Ok button tapped")
+//                })
+//                }
+//            else {
+                Auth.auth().sendPasswordReset(withEmail: email.text!){(error)in
+                    if error == nil{
+                        print("SEND")
+                        let dialogMessage = UIAlertController(title: "Password reset link sent!", message: "Please check your email inbox and proceed following the instructions.", preferredStyle: .alert)
+                    
+                    // Create OK button with action handler
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                        print("Ok button tapped")
+                     })
+                    
+                    //Add OK button to a dialog message
+                        dialogMessage.addAction(ok)
+                    // Present Alert to
+                        self.present(dialogMessage, animated: true, completion: nil)
+                        print("Sent")
+                        return
+                    }else{
+                        print("Failed - \(String(describing:error?.localizedDescription))")
+                    }
+                }
+//                }
+            }
+        else {
+            let dialogMessage = UIAlertController(title: "Attention", message: "Please enter your email", preferredStyle: .alert)
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+            })
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let RecordTripsViewController = segue.destination as? RecordTripsViewController {
             RecordTripsViewController.modelController = modelController
         }
     }
+
 }
