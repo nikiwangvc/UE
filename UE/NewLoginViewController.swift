@@ -132,19 +132,9 @@ class NewLoginViewController: UIViewController {
     @IBAction func forgotPasswordTapped(_ sender: Any) {
         
         if (email.text?.isEmpty == false) {
-//            if Auth.auth().currentUser == nil{
-//                print("User does not exist")
-//                let dialogMessage = UIAlertController(title: "User does not exist", message: "Please check your email or proceed to sign up.", preferredStyle: .alert)
-//
-//            // Create OK button with action handler
-//                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-//                print("Ok button tapped")
-//                })
-//                }
-//            else {
+
                 Auth.auth().sendPasswordReset(withEmail: email.text!){(error)in
                     if error == nil{
-                        print("SEND")
                         let dialogMessage = UIAlertController(title: "Password reset link sent!", message: "Please check your email inbox and proceed following the instructions.", preferredStyle: .alert)
                     
                     // Create OK button with action handler
@@ -159,10 +149,22 @@ class NewLoginViewController: UIViewController {
                         print("Sent")
                         return
                     }else{
+                        let dialogMessage = UIAlertController(title: "User does not exist", message: "Please check your email or proceed to sign up :)", preferredStyle: .alert)
+                    
+                    // Create OK button with action handler
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                        print("Ok button tapped")
+                     })
+                    
+                    //Add OK button to a dialog message
+                        dialogMessage.addAction(ok)
+                    // Present Alert to
+                        self.present(dialogMessage, animated: true, completion: nil)
                         print("Failed - \(String(describing:error?.localizedDescription))")
+                        return
                     }
                 }
-//                }
+
             }
         else {
             let dialogMessage = UIAlertController(title: "Attention", message: "Please enter your email", preferredStyle: .alert)
@@ -176,6 +178,30 @@ class NewLoginViewController: UIViewController {
             // Present Alert to
             self.present(dialogMessage, animated: true, completion: nil)
         }
+        
     }
 
+//    //forgotPasswordValidate() function is to check if the email enter is already existed in the firebase auth database, if so then alert
+//    func forgotPasswordValidate(){
+//        if Auth.auth().currentUser != nil {
+//            do {
+//                try forgotPasswordTapped(<#T##sender: Any##Any#>)
+//                print("successful")
+//            }
+//            catch {
+//                print("User does not exist")
+//                let dialogMessage = UIAlertController(title: "Uh Oh, user doesn't exist", message: "Please check your email or proceed to sign up :)", preferredStyle: .alert)
+//                // Create OK button with action handler
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+//                    print("Ok button tapped")
+//                })
+//
+//                //Add OK button to a dialog message
+//                dialogMessage.addAction(ok)
+//                // Present Alert to
+//                self.present(dialogMessage, animated: true, completion: nil)
+//            }
+//        }
+//
+//}
 }

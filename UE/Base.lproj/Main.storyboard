@@ -315,6 +315,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="SustainabilityUnitPicker" destination="0Io-EJ-JMo" id="j6j-yE-ly7"/>
+                        <outlet property="email" destination="TjJ-VW-jQG" id="1ry-FK-Jh3"/>
                         <outlet property="resetButton" destination="uZp-nZ-zqh" id="9fz-Mb-jbf"/>
                     </connections>
                 </viewController>
@@ -427,10 +428,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVw-bW-gZg">
-                                        <rect key="frame" x="136" y="843" width="301" height="31"/>
+                                        <rect key="frame" x="84" y="871" width="386" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Forgot password? Quick reset here!"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Forgot password? Click here for an easy reset. "/>
                                         <connections>
                                             <action selector="forgotPassword:" destination="bjr-cP-yBk" eventType="touchUpInside" id="MX6-lE-fQT"/>
                                             <action selector="forgotPasswordTapped:" destination="mXF-bo-V0W" eventType="touchUpInside" id="BuX-hj-aRM"/>
@@ -455,7 +456,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVp-Ip-0GC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bjr-cP-yBk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1862.3188405797102" y="-1027.9017857142858"/>
+            <point key="canvasLocation" x="-1862.3188405797102" y="-1028.5714285714284"/>
         </scene>
         <!--New Sign Up View Controller-->
         <scene sceneID="zYX-Nu-jIX">
@@ -550,31 +551,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikw-z4-9m3">
-                                <rect key="frame" x="87" y="101" width="240" height="128"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3o1-hH-cHP">
+                                <rect key="frame" x="87" y="298" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3o1-hH-cHP">
-                                <rect key="frame" x="104" y="308" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGU-Fo-j6f">
-                                <rect key="frame" x="104" y="386" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f34-uV-D4s">
-                                <rect key="frame" x="119" y="487" width="67" height="31"/>
+                                <rect key="frame" x="87" y="358" width="240" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send"/>
                                 <connections>
                                     <action selector="resetPasswordTapped:" destination="Eeb-Pm-ROa" eventType="touchUpInside" id="7io-ST-cZL"/>
+                                    <action selector="sendButtonTapped:" destination="Eeb-Pm-ROa" eventType="touchUpInside" id="RdQ-Bb-idG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-aE-Vwp">
+                                <rect key="frame" x="87" y="409" width="240" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Eeb-Pm-ROa" eventType="touchUpInside" id="i0w-0U-brm"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikw-z4-9m3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U2o-pW-toV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -583,12 +589,14 @@
                     </scrollView>
                     <connections>
                         <outlet property="ResetPassword" destination="f34-uV-D4s" id="QfS-os-VGO"/>
-                        <outlet property="email" destination="3o1-hH-cHP" id="L6I-hD-oIH"/>
+                        <outlet property="email" destination="3o1-hH-cHP" id="dQ7-VC-A0m"/>
+                        <outlet property="login" destination="LEj-aE-Vwp" id="3vY-kO-x2L"/>
+                        <outlet property="send" destination="f34-uV-D4s" id="fPJ-Rx-iXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19v-J6-JS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="-309"/>
+            <point key="canvasLocation" x="-433.33333333333337" y="-309.375"/>
         </scene>
     </scenes>
     <resources>
