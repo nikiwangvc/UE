@@ -4,6 +4,7 @@ import UIKit
 import CoreLocation // for location tracking
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -12,7 +13,15 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     var previousLocation:CLLocation! // to calculate distance
     var firstCoordinateFound = false // we don't want to calculate distance until we have two sets of coordinates
     var distanceTraveled:Double = 0
+    var db: Firestore!
+    var modelController: ModelController!
     
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            print("modelController")
+            print(modelController.uid)
+        }
+
     // https://www.appsdeveloperblog.com/determine-users-current-location-example-in-swift/
     // gets users current location if allowed
     func determineMyCurrentLocation() {
@@ -70,6 +79,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
                 locationManager.stopUpdatingLocation()
                 // https://stackoverflow.com/questions/26326296/changing-text-of-uibutton-programmatically-swift
                 RecordTripButton.setTitle("Start Trip", for: .normal)
+//                self.db.collection("users").document(self.modelController.uid).collection("trips").document(
             }
             else {
                 RecordTripButton.setTitle("Stop Trip", for: .normal)

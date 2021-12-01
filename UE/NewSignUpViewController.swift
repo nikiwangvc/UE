@@ -17,6 +17,7 @@ class NewSignUpViewController: UIViewController {
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     var db: Firestore!
+    var modelController: ModelController!
     
     @IBOutlet var scrollView: UIScrollView!
     override func viewDidLoad() {
@@ -95,6 +96,7 @@ class NewSignUpViewController: UIViewController {
             }
             print("UID \(Auth.auth().currentUser?.uid)")
             let uidString = Auth.auth().currentUser?.uid
+            self.modelController.uid = Auth.auth().currentUser!.uid
             self.db.collection("users").document(uidString!).setData([
                 "email": self.email.text!
             ]) { err in
@@ -110,6 +112,11 @@ class NewSignUpViewController: UIViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
             vc?.modalPresentationStyle = .overFullScreen
             self.present(vc!,animated:true)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let RecordTripsViewController = segue.destination as? RecordTripsViewController {
+            RecordTripsViewController.modelController = modelController
         }
     }
 }
