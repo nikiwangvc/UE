@@ -11,7 +11,7 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>$(Urban-Earth.UE)</string>
+				<string>$(Urban-Earth2.UE)</string>
 			</array>
 		</dict>
 	</array>

@@ -15,7 +15,7 @@ class NewLoginViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var forgotPassword: UIButton!
     @IBOutlet var scrollView: UIScrollView!
-    var modelController: ModelController
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +111,7 @@ class NewLoginViewController: UIViewController {
     func checkUserInfo(){
         if Auth.auth().currentUser != nil{
             let thisUid = Auth.auth().currentUser?.uid
-            modelController.uid = Auth.auth().currentUser?.uid ?? "no uid"
+            defaults.set(thisUid, forKey: "uid")
             print("UID \(Auth.auth().currentUser?.uid)")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -175,11 +175,6 @@ class NewLoginViewController: UIViewController {
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
             })
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let RecordTripsViewController = segue.destination as? RecordTripsViewController {
-            RecordTripsViewController.modelController = modelController
         }
     }
-
 }
