@@ -135,7 +135,6 @@ class NewLoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-        
         if (email.text?.isEmpty == false) {
 
                 Auth.auth().sendPasswordReset(withEmail: email.text!){(error)in
@@ -178,8 +177,13 @@ class NewLoginViewController: UIViewController {
                 print("Ok button tapped")
             })
     
-
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
         }
+        
+    }
 }
-}
+
 
