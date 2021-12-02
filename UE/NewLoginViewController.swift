@@ -15,7 +15,7 @@ class NewLoginViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var forgotPassword: UIButton!
     @IBOutlet var scrollView: UIScrollView!
-
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +111,7 @@ class NewLoginViewController: UIViewController {
     func checkUserInfo(){
         if Auth.auth().currentUser != nil{
             let thisUid = Auth.auth().currentUser?.uid
-            
+            defaults.set(thisUid, forKey: "uid")
             print("UID \(Auth.auth().currentUser?.uid)")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
