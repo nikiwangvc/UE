@@ -21,47 +21,48 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
             super.viewWillAppear(animated)
             let thisUid = defaults.object(forKey: "uid") as! String ?? "no uid yet"
             print(thisUid)
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        db = Firestore.firestore()
-        let docRef = db.collection("users").document(thisUid)
-        var initialized = ""
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                initialized = document.get("initialized") as! String
-                print("Document data: \(initialized)")
-            } else {
-                print("Document does not exist")
-            }
-        }
-//        if(initialized != "true"){
-//            self.db.collection("users").document(thisUid).setData([
-//                            "initialized": "true"
-//                        ])
-//            self.db.collection("users").document(thisUid).collection("settings").document("document").setData([
-//                "autoTripTracking": false,
-//                "distanceUnit": "miles",
-//                "sustainabilityUnit": "co2"
-//            ])
-//            self.db.collection("users").document(thisUid).collection("friends").document("document").setData([
-//                "friendsEmails": [],
-//                "iHaveNotAcceptedYet": [],
-//                "theyHaveNotAcceptedYet": []
-//            ])
-//            self.db.collection("users").document(thisUid).collection("record").document("document").setData([
-//                "co2": 0,
-//                "kilometersTraveled": 0,
-//                "formOfTransport": "electric car",
-//                "secondsElapsed": 0,
-//                "tripInProgress": false
-//            ])
-//            self.db.collection("users").document(thisUid).collection("record").document("document").setData([
-//                "dayCO2": 0,
-//                "weekCO2": 0,
-//                "totalCO2": 0,
-//                "graphScale": "week"
-//            ])
+//        let settings = FirestoreSettings()
+//        Firestore.firestore().settings = settings
+//        db = Firestore.firestore()
+//        let docRef = db.collection("users").document(thisUid)
+//        var initialized = ""
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                initialized = document.get("initialized") as! String
+//                print("Document data: \(initialized)")
+//            } else {
+//                print("Document does not exist")
+//            }
 //        }
+//        if(initialized != "true"){
+//                   self.db.collection("users").document(thisUid).setData([
+//                                   "initialized": "true"
+//                               ])
+//                   self.db.collection("users").document(thisUid).collection("settings").document("document").setData([
+//                       "email": initialized,
+//                       "autoTripTracking": false,
+//                       "distanceUnit": "miles",
+//                       "sustainabilityUnit": "co2"
+//                   ])
+//                   self.db.collection("users").document(thisUid).collection("friends").document("document").setData([
+//                       "friendsEmails": [],
+//                       "iHaveNotAcceptedYet": [],
+//                       "theyHaveNotAcceptedYet": []
+//                   ])
+//                   self.db.collection("users").document(thisUid).collection("record").document("document").setData([
+//                       "co2": 0,
+//                       "kilometersTraveled": 0,
+//                       "formOfTransport": "electric car",
+//                       "secondsElapsed": 0,
+//                       "tripInProgress": false
+//                   ])
+//                   self.db.collection("users").document(thisUid).collection("stats").document("document").setData([
+//                       "dayCO2": 0,
+//                       "weekCO2": 0,
+//                       "totalCO2": 0,
+//                       "graphScale": "week"
+//                   ])
+//               }
     }
     
     override func viewDidLoad() {
