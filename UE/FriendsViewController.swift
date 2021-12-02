@@ -16,14 +16,6 @@ class FriendsViewController: UIViewController {
     }
     
     
-    @IBAction func Home(_ sender: Any) {
-        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
-        let RecordTripsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RecordTripsViewController") as! RecordTripsViewController
-        RecordTripsViewController.modalPresentationStyle = .overFullScreen
-        self.present(RecordTripsViewController, animated: true, completion: nil)
-    }
-    
-    
     /*
     // MARK: - Navigation
 

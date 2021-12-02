@@ -119,12 +119,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     
      
     
-    @IBAction func Graphs(_ sender: Any) {
-        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
-        let GraphsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GraphsViewController") as! GraphsViewController
-        GraphsViewController.modalPresentationStyle = .overFullScreen
-        self.present(GraphsViewController, animated: true, completion: nil)
-    }
+
     
     
     /*

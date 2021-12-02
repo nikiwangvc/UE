@@ -15,7 +15,7 @@ class NewLoginViewController: UIViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var forgotPassword: UIButton!
     @IBOutlet var scrollView: UIScrollView!
-    var modelController: ModelController
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +111,7 @@ class NewLoginViewController: UIViewController {
     func checkUserInfo(){
         if Auth.auth().currentUser != nil{
             let thisUid = Auth.auth().currentUser?.uid
-            modelController.uid = Auth.auth().currentUser?.uid ?? "no uid"
+            
             print("UID \(Auth.auth().currentUser?.uid)")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -178,34 +178,8 @@ class NewLoginViewController: UIViewController {
                 print("Ok button tapped")
             })
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let RecordTripsViewController = segue.destination as? RecordTripsViewController {
-            RecordTripsViewController.modelController = modelController
-        }
-        
-    }
 
-//    //forgotPasswordValidate() function is to check if the email enter is already existed in the firebase auth database, if so then alert
-//    func forgotPasswordValidate(){
-//        if Auth.auth().currentUser != nil {
-//            do {
-//                try forgotPasswordTapped(<#T##sender: Any##Any#>)
-//                print("successful")
-//            }
-//            catch {
-//                print("User does not exist")
-//                let dialogMessage = UIAlertController(title: "Uh Oh, user doesn't exist", message: "Please check your email or proceed to sign up :)", preferredStyle: .alert)
-//                // Create OK button with action handler
-//                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-//                    print("Ok button tapped")
-//                })
-//
-//                //Add OK button to a dialog message
-//                dialogMessage.addAction(ok)
-//                // Present Alert to
-//                self.present(dialogMessage, animated: true, completion: nil)
-//            }
-//        }
-//
-//}
+        }
 }
+}
+
