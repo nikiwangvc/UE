@@ -68,7 +68,21 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+    }
+
+    
+
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     // https://www.appsdeveloperblog.com/determine-users-current-location-example-in-swift/
@@ -168,12 +182,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     
      
     
-    @IBAction func Graphs(_ sender: Any) {
-        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
-        let GraphsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GraphsViewController") as! GraphsViewController
-        GraphsViewController.modalPresentationStyle = .overFullScreen
-        self.present(GraphsViewController, animated: true, completion: nil)
-    }
+
     
     
     /*

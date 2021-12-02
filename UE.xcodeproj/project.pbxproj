@@ -23,7 +23,6 @@
 		8E199EC22727351800A868AE /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8E199EC12727351800A868AE /* Auth0 */; };
 		8E8B1221274452CF001A4B45 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B1220274452CF001A4B45 /* FriendsViewController.swift */; };
 		8E8B1223274452E5001A4B45 /* TripHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B1222274452E5001A4B45 /* TripHistoryViewController.swift */; };
-		8E8B12252744530D001A4B45 /* GraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B12242744530D001A4B45 /* GraphsViewController.swift */; };
 		8E8B122727445330001A4B45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B122627445330001A4B45 /* ProfileViewController.swift */; };
 		8EF3414B2742C381006FCFE5 /* RecordTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */; };
 		B43CA67DA4898D2C4FFD2DF7 /* Pods_UETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C6BBAA9F56983607BD2F25 /* Pods_UETests.framework */; };
@@ -73,7 +72,6 @@
 		665C9C997796EF5F1CFB93A7 /* Pods_UE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8B1220274452CF001A4B45 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		8E8B1222274452E5001A4B45 /* TripHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewController.swift; sourceTree = "<group>"; };
-		8E8B12242744530D001A4B45 /* GraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsViewController.swift; sourceTree = "<group>"; };
 		8E8B122627445330001A4B45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTripsViewController.swift; sourceTree = "<group>"; };
 		98AA462AEAB67B995673ECC8 /* Pods-UE-UEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UE-UEUITests.release.xcconfig"; path = "Target Support Files/Pods-UE-UEUITests/Pods-UE-UEUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				32FF9B5A27556506001FA303 /* ResetPasswordViewController.swift */,
 				8E8B1220274452CF001A4B45 /* FriendsViewController.swift */,
 				8E8B1222274452E5001A4B45 /* TripHistoryViewController.swift */,
-				8E8B12242744530D001A4B45 /* GraphsViewController.swift */,
 				8E8B122627445330001A4B45 /* ProfileViewController.swift */,
 				3276702B2744185F005049DF /* NewLoginViewController.swift */,
 				3276702D2744186D005049DF /* NewSignUpViewController.swift */,
@@ -451,7 +448,6 @@
 				3276702C2744185F005049DF /* NewLoginViewController.swift in Sources */,
 				8E8B1221274452CF001A4B45 /* FriendsViewController.swift in Sources */,
 				3259A7F127272EC700DDFA57 /* SceneDelegate.swift in Sources */,
-				8E8B12252744530D001A4B45 /* GraphsViewController.swift in Sources */,
 				3276702E2744186D005049DF /* NewSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,7 +628,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UE/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to estimate how much you're helping the environment.";
@@ -646,7 +642,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth2.UE";
+				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth.UE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -662,7 +658,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UE/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to estimate how much you're helping the environment.";
@@ -676,7 +672,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth2.UE";
+				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth.UE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
