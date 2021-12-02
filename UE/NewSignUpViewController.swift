@@ -97,32 +97,24 @@ class NewSignUpViewController: UIViewController {
             print("UID \(Auth.auth().currentUser?.uid)")
             let uidString = Auth.auth().currentUser?.uid
             self.defaults.set(Auth.auth().currentUser!.uid, forKey: "uid")
-//            self.db.collection("users").document(uidString!).setData([
-//                            "initialized": self.email.text!
-//                        ])
-            self.db.collection("users").document(uidString!).collection("settings").document("document").setData([
+            self.db.collection("users").document(uidString!).setData([
                 "email": self.email.text!,
                 "autoTripTracking": false,
                 "distanceUnit": "miles",
-                "sustainabilityUnit": "co2"
-            ])
-            self.db.collection("users").document(uidString!).collection("friends").document("document").setData([
+                "sustainabilityUnit": "co2",
                 "friendsEmails": [],
                 "iHaveNotAcceptedYet": [],
-                "theyHaveNotAcceptedYet": []
-            ])
-            self.db.collection("users").document(uidString!).collection("record").document("document").setData([
+                "theyHaveNotAcceptedYet": [],
                 "co2": 0,
                 "kilometersTraveled": 0,
                 "formOfTransport": "electric car",
                 "secondsElapsed": 0,
-                "tripInProgress": false
-            ])
-            self.db.collection("users").document(uidString!).collection("stats").document("document").setData([
+                "tripInProgress": false,
                 "dayCO2": 0,
                 "weekCO2": 0,
                 "totalCO2": 0,
-                "graphScale": "week"
+                "graphScale": "week",
+                "trips": []
             ])
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")

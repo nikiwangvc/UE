@@ -16,53 +16,28 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
     var distanceTraveled:Double = 0
     var db: Firestore!
     let defaults = UserDefaults.standard
+    var thisUid = "not assigned yet"
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            let thisUid = defaults.object(forKey: "uid") as! String ?? "no uid yet"
+            thisUid = defaults.object(forKey: "uid") as! String ?? "no uid yet"
             print(thisUid)
-//        let settings = FirestoreSettings()
-//        Firestore.firestore().settings = settings
-//        db = Firestore.firestore()
-//        let docRef = db.collection("users").document(thisUid)
-//        var initialized = ""
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                initialized = document.get("initialized") as! String
-//                print("Document data: \(initialized)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-//        if(initialized != "true"){
-//                   self.db.collection("users").document(thisUid).setData([
-//                                   "initialized": "true"
-//                               ])
-//                   self.db.collection("users").document(thisUid).collection("settings").document("document").setData([
-//                       "email": initialized,
-//                       "autoTripTracking": false,
-//                       "distanceUnit": "miles",
-//                       "sustainabilityUnit": "co2"
-//                   ])
-//                   self.db.collection("users").document(thisUid).collection("friends").document("document").setData([
-//                       "friendsEmails": [],
-//                       "iHaveNotAcceptedYet": [],
-//                       "theyHaveNotAcceptedYet": []
-//                   ])
-//                   self.db.collection("users").document(thisUid).collection("record").document("document").setData([
-//                       "co2": 0,
-//                       "kilometersTraveled": 0,
-//                       "formOfTransport": "electric car",
-//                       "secondsElapsed": 0,
-//                       "tripInProgress": false
-//                   ])
-//                   self.db.collection("users").document(thisUid).collection("stats").document("document").setData([
-//                       "dayCO2": 0,
-//                       "weekCO2": 0,
-//                       "totalCO2": 0,
-//                       "graphScale": "week"
-//                   ])
-//               }
+        let settings = FirestoreSettings()
+
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
+        let docRef = db.collection("users").document(thisUid)
+        
+        docRef.getDocument(source: .cache) { (document, error) in
+            if let document = document {
+                let kilometersTraveled = document.get("kilometersTraveled")
+                // changing it from kilometersTraveled to kilometersTraveled! might work
+                self.DistanceTraveledLabel.text = "Distance Traveled \(kilometersTraveled) meters"
+            } else {
+                print("Document does not exist in cache")
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -91,7 +66,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
@@ -111,6 +86,9 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
         else {
             distanceTraveled += userLocation.distance(from:previousLocation) // in meters
         }
+        self.db.collection("users").document(thisUid).collection("record").document("document").setData([
+            "kilometersTraveled": distanceTraveled / 1000
+        ])
         previousLocation = userLocation
         let currentLatitude = userLocation.coordinate.latitude
         let currentLongitude = userLocation.coordinate.longitude
@@ -202,3 +180,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate {
 // 20 pounds CO2 released for 1 gallon gas
 // that's 0.01 tons CO2
 // 
+
+
+//let usersWhoMatchSearchedEmail = db.collection("users").whereField("email", isEqualTo: searchBarValue)
+
