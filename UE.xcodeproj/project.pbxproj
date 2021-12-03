@@ -19,6 +19,7 @@
 		32767026274331B7005049DF /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32767025274331B7005049DF /* FirebaseAuthManager.swift */; };
 		3276702C2744185F005049DF /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276702B2744185F005049DF /* NewLoginViewController.swift */; };
 		3276702E2744186D005049DF /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276702D2744186D005049DF /* NewSignUpViewController.swift */; };
+		3299905A275A6397009592CF /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32999059275A6397009592CF /* ChartXAxisFormatter.swift */; };
 		32FF9B5B27556507001FA303 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF9B5A27556506001FA303 /* ResetPasswordViewController.swift */; };
 		32FF9B602759D973001FA303 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 32FF9B5F2759D973001FA303 /* SwiftUICharts */; };
 		8E199EC22727351800A868AE /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8E199EC12727351800A868AE /* Auth0 */; };
@@ -66,6 +67,7 @@
 		32767025274331B7005049DF /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		3276702B2744185F005049DF /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
 		3276702D2744186D005049DF /* NewSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignUpViewController.swift; sourceTree = "<group>"; };
+		32999059275A6397009592CF /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
 		32FF9B5A27556506001FA303 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		4885DEBD6119612658819E41 /* Pods-UETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UETests.release.xcconfig"; path = "Target Support Files/Pods-UETests/Pods-UETests.release.xcconfig"; sourceTree = "<group>"; };
 		4CB909CE217F656A978ADCB1 /* Pods-UE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UE.debug.xcconfig"; path = "Target Support Files/Pods-UE/Pods-UE.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				3276702327432E93005049DF /* GoogleService-Info.plist */,
 				8EF3414A2742C381006FCFE5 /* RecordTripsViewController.swift */,
 				32767025274331B7005049DF /* FirebaseAuthManager.swift */,
+				32999059275A6397009592CF /* ChartXAxisFormatter.swift */,
 			);
 			path = UE;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				3259A7EF27272EC700DDFA57 /* AppDelegate.swift in Sources */,
 				3276702C2744185F005049DF /* NewLoginViewController.swift in Sources */,
 				8E8B1221274452CF001A4B45 /* FriendsViewController.swift in Sources */,
+				3299905A275A6397009592CF /* ChartXAxisFormatter.swift in Sources */,
 				3259A7F127272EC700DDFA57 /* SceneDelegate.swift in Sources */,
 				3276702E2744186D005049DF /* NewSignUpViewController.swift in Sources */,
 			);

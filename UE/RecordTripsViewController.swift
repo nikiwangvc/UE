@@ -38,8 +38,8 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
     @IBOutlet weak var RecordTripButton: UIButton!
 
-    @IBOutlet var transportPicker: UIPickerView!
-    
+    @IBOutlet weak var transportPicker: UIPickerView!
+
     // walking 0.03 -> saves 0.54 pounds/mile 0.54 lb/1 mi * 1 mi/1.61 km * 1 kg /2.20 lbs = 0.54*0.28 = 0.15 kg/km
 
     // running 0.06 -> saves 0.51 -> 0.14
@@ -69,6 +69,8 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
+        title = "Record"
+
 
         transportPicker.setValue(UIColor.black, forKey: "textColor")
 
@@ -120,9 +122,11 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
                 }
 
-                let currentFormIndexString = document.get("formOfTransport") as! String
-
-                let currentFormIndex = Int(currentFormIndexString)!
+//                let currentFormIndexString = document.get("formOfTransport") as! String
+//
+//                let currentFormIndex = Int(currentFormIndexString)!
+                
+                let currentFormIndex = document.get("formOfTransport") as! Int
 
                 print("currentFormIndex \(currentFormIndex)")
 
@@ -145,6 +149,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     override func viewDidLoad() {
 
         super.viewDidLoad()
+
 
         // Connect data:
 
@@ -198,7 +203,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
            self.db.collection("users").document(thisUid).updateData([
 
-               "formOfTransport": currentTransportIndex
+               "formOfTransport": Int(currentTransportIndex)
 
            ])
 
