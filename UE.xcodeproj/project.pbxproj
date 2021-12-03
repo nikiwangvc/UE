@@ -20,6 +20,7 @@
 		3276702C2744185F005049DF /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276702B2744185F005049DF /* NewLoginViewController.swift */; };
 		3276702E2744186D005049DF /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276702D2744186D005049DF /* NewSignUpViewController.swift */; };
 		32FF9B5B27556507001FA303 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FF9B5A27556506001FA303 /* ResetPasswordViewController.swift */; };
+		32FF9B602759D973001FA303 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 32FF9B5F2759D973001FA303 /* SwiftUICharts */; };
 		8E199EC22727351800A868AE /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 8E199EC12727351800A868AE /* Auth0 */; };
 		8E8B1221274452CF001A4B45 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B1220274452CF001A4B45 /* FriendsViewController.swift */; };
 		8E8B1223274452E5001A4B45 /* TripHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8B1222274452E5001A4B45 /* TripHistoryViewController.swift */; };
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FF9B602759D973001FA303 /* SwiftUICharts in Frameworks */,
 				8E199EC22727351800A868AE /* Auth0 in Frameworks */,
 				B74757C859CF2E83EF20FF16 /* Pods_UE.framework in Frameworks */,
 			);
@@ -213,6 +215,7 @@
 			name = UE;
 			packageProductDependencies = (
 				8E199EC12727351800A868AE /* Auth0 */,
+				32FF9B5F2759D973001FA303 /* SwiftUICharts */,
 			);
 			productName = UE;
 			productReference = 3259A7EB27272EC700DDFA57 /* UE.app */;
@@ -291,6 +294,7 @@
 			mainGroup = 3259A7E227272EC700DDFA57;
 			packageReferences = (
 				8E199EC02727351800A868AE /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				32FF9B5E2759D972001FA303 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 3259A7EC27272EC700DDFA57 /* Products */;
 			projectDirPath = "";
@@ -628,7 +632,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UE/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to estimate how much you're helping the environment.";
@@ -642,7 +646,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth2.UE";
+				PRODUCT_BUNDLE_IDENTIFIER = "Urban-Earth.UE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -688,7 +692,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -714,7 +718,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -739,7 +743,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -763,7 +767,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DNS7VFR568;
+				DEVELOPMENT_TEAM = 64AZXC9BB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -822,6 +826,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		32FF9B5E2759D972001FA303 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AfrazCodes/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.2;
+			};
+		};
 		8E199EC02727351800A868AE /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift.git";
@@ -833,6 +845,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		32FF9B5F2759D973001FA303 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32FF9B5E2759D972001FA303 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
 		8E199EC12727351800A868AE /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E199EC02727351800A868AE /* XCRemoteSwiftPackageReference "Auth0.swift" */;

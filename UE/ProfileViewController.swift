@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var resetButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Settings"
         SustainabilityUnitPicker.delegate = self
         SustainabilityUnitPicker.dataSource = self
         //Looks for single or multiple taps.

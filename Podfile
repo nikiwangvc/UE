@@ -6,6 +6,8 @@ target 'UE' do
   use_frameworks!
 
   # Pods for UE
+pod'Charts'
+
   
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'

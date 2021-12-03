@@ -6,30 +6,39 @@
 //
 
 import UIKit
+import Charts
 
-class TripHistoryViewController: UIViewController {
 
+
+class TripHistoryViewController: UIViewController, ChartViewDelegate {
+
+    var lineChart = LineChartView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lineChart.delegate = self
         // Do any additional setup after loading the view.
     }
-    
 
-    @IBAction func Home(_ sender: Any) {
-        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle :nil)
-        let RecordTripsViewController = mainStoryBoard.instantiateViewController(withIdentifier: "RecordTripsViewController") as! RecordTripsViewController
-        RecordTripsViewController.modalPresentationStyle = .overFullScreen
-        self.present(RecordTripsViewController, animated: true, completion: nil)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        lineChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width,
+                                 height: self.view.frame.size.width)
+        lineChart.center = view.center
+        view.addSubview(lineChart)
+        
+        var entries = [ChartDataEntry]()
+        
+        //insert mock data
+        for x in 0..<10{
+            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+        }
+        
+        let set = LineChartDataSet(entries: entries)
+        set.colors = ChartColorTemplates.material()
+        
+        let data = LineChartData(dataSet: set)
+        lineChart.data = data
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

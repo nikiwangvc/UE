@@ -9,8 +9,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class FriendsViewController: UIViewController,UITableViewDataSource, UISearchBarDelegate {
-
+//,UITableViewDataSource, UISearchBarDelegate
+class FriendsViewController: UIViewController {
     
     //search bar in friends view controller
    
@@ -26,20 +26,20 @@ class FriendsViewController: UIViewController,UITableViewDataSource, UISearchBar
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
         //https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
-        tableView.dataSource = self
-        searchBar.delegate = self
+//        tableView.dataSource = self
+//        searchBar.delegate = self
      
         
         view.addGestureRecognizer(tap)
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print("ok")
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        print("ok")
+//    }
 
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {

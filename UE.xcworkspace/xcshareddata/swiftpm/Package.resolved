@@ -27,6 +27,15 @@
           "revision": "b355c569efcd409e252ccbb500d9fc2713b4d64d",
           "version": "0.12.5"
         }
+      },
+      {
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/AfrazCodes/SwiftUICharts",
+        "state": {
+          "branch": null,
+          "revision": "6cacb77e8d3e0a9ed1d09ce9a19ba057c95ce529",
+          "version": "0.5.2"
+        }
       }
     ]
   },
