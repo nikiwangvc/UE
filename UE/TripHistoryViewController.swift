@@ -16,8 +16,11 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Statistics"
+        
         lineChart.delegate = self
         // Do any additional setup after loading the view.
+        //https://www.youtube.com/watch?v=J9hl7HHXNHU
     }
 
     override func viewDidLayoutSubviews() {

@@ -30,10 +30,10 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="CLb-CL-OQu" kind="relationship" relationship="viewControllers" id="b31-rG-YNi"/>
-                        <segue destination="XDn-Mv-kq8" kind="relationship" relationship="viewControllers" id="AJS-Dy-VFJ"/>
-                        <segue destination="xQP-5p-hbP" kind="relationship" relationship="viewControllers" id="jtK-fP-hfF"/>
-                        <segue destination="7ic-Rt-5iN" kind="relationship" relationship="viewControllers" id="xs0-Bb-DsC"/>
+                        <segue destination="2Dw-hJ-C7l" kind="relationship" relationship="viewControllers" id="b31-rG-YNi"/>
+                        <segue destination="Ppo-yX-w46" kind="relationship" relationship="viewControllers" id="AJS-Dy-VFJ"/>
+                        <segue destination="pR8-0C-iOG" kind="relationship" relationship="viewControllers" id="jtK-fP-hfF"/>
+                        <segue destination="rsK-yx-xKh" kind="relationship" relationship="viewControllers" id="xs0-Bb-DsC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6X1-mt-QWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -49,14 +49,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance Traveled: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAn-JU-g42">
-                                <rect key="frame" x="20" y="435" width="268" height="49"/>
+                                <rect key="frame" x="20" y="435" width="374" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sustainability Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-qq-Plx">
-                                <rect key="frame" x="20" y="492" width="268" height="49"/>
+                                <rect key="frame" x="20" y="492" width="374" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,7 +81,7 @@
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.90588235294117647" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="on the go (11)" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-ie-2mY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="on the go (12)" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-ie-2mY">
                                 <rect key="frame" x="-17" y="0.0" width="448" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -90,20 +90,19 @@
                         <color key="backgroundColor" red="0.80784313730000001" green="0.90588235289999997" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" identifier="RecordTripsView"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" image="record.circle" catalog="system" id="mga-9Q-GKF">
-                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <imageReference key="selectedImage" image="record.circle" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="Kif-ky-uim"/>
                     <connections>
                         <outlet property="DistanceTraveledLabel" destination="JAn-JU-g42" id="VW8-2G-tKJ"/>
                         <outlet property="RecordTripButton" destination="LTg-te-iXQ" id="KD9-42-m1Q"/>
+                        <outlet property="SustainabilityScoreLabel" destination="8KJ-qq-Plx" id="KOU-is-rJH"/>
+                        <outlet property="transportPicker" destination="DeG-Xl-RVJ" id="WgY-ni-k9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3v-kk-8f7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3284" y="477"/>
+            <point key="canvasLocation" x="-2373.913043478261" y="476.78571428571428"/>
         </scene>
-        <!--Friends-->
+        <!--Friends View Controller-->
         <scene sceneID="jUu-47-1rN">
             <objects>
                 <viewController storyboardIdentifier="FriendsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XDn-Mv-kq8" customClass="FriendsViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,42 +110,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blue Gradient Elegant New Season Instagram Story (2)" translatesAutoresizingMaskIntoConstraints="NO" id="zQ7-BQ-S62">
-                                <rect key="frame" x="-37" y="0.0" width="489" height="813"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="on the go (2)" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-0f-VnJ">
+                                <rect key="frame" x="-15" y="-54" width="429" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-Iz-JAA">
-                                <rect key="frame" x="-15" y="177" width="451" height="636"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="2Xm-LX-8mo">
-                                    <rect key="frame" x="0.0" y="0.0" width="451" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Fq-AL-gnx"/>
                         <color key="backgroundColor" red="0.80784313725490198" green="0.90588235294117647" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="person.2.fill" catalog="system" id="cMc-6T-EfB">
-                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <imageReference key="selectedImage" image="person.2.fill" catalog="system" symbolScale="default"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="WjQ-dJ-KDy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="searchBar" destination="2Xm-LX-8mo" id="fvL-sM-gPj"/>
-                        <outlet property="tableView" destination="VDC-Iz-JAA" id="3eX-ty-hma"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orx-Ed-OVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2307.2463768115945" y="477.45535714285711"/>
+            <point key="canvasLocation" x="-486.95652173913049" y="477.45535714285711"/>
         </scene>
-        <!--Statistics-->
+        <!--Trip History View Controller-->
         <scene sceneID="kSZ-5p-CDv">
             <objects>
                 <viewController storyboardIdentifier="TripHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xQP-5p-hbP" customClass="TripHistoryViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,15 +135,13 @@
                         <viewLayoutGuide key="safeArea" id="j2s-O9-FsR"/>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.90588235289999997" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.xyaxis.line" catalog="system" selectedImage="chart.xyaxis.line" id="XTL-H8-YMP">
-                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="E7Q-DP-ehG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWf-02-J6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1386.9565217391305" y="476.78571428571428"/>
+            <point key="canvasLocation" x="3342" y="477"/>
         </scene>
-        <!--Setting-->
+        <!--Profile View Controller-->
         <scene sceneID="UwB-M8-6wJ">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ic-Rt-5iN" customClass="ProfileViewController" customModule="UE" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,21 +209,11 @@
                                     <action selector="LogoutTapped:" destination="7ic-Rt-5iN" eventType="touchUpInside" id="3oH-ig-eSa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9y-Ac-0ZF">
-                                <rect key="frame" x="16" y="77" width="124" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q9a-e9-HVU"/>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.90588235289999997" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="Jij-xo-obP">
-                        <color key="badgeColor" red="0.0" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <imageReference key="selectedImage" image="gearshape.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="MS1-V7-sXr"/>
                     <connections>
                         <outlet property="SustainabilityUnitPicker" destination="0Io-EJ-JMo" id="j6j-yE-ly7"/>
                         <outlet property="email" destination="TjJ-VW-jQG" id="1ry-FK-Jh3"/>
@@ -255,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9b-J7-cWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="477"/>
+            <point key="canvasLocation" x="1313" y="477"/>
         </scene>
         <!--New Login View Controller-->
         <scene sceneID="cGP-Yd-R29">
@@ -504,22 +471,121 @@
             </objects>
             <point key="canvasLocation" x="5587" y="-852"/>
         </scene>
+        <!--Statistics-->
+        <scene sceneID="pma-zC-b0m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pR8-0C-iOG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.xyaxis.line" catalog="system" selectedImage="chart.xyaxis.line" id="XTL-H8-YMP">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="IvU-9f-XEv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.074509803920000006" green="0.062745098040000002" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xQP-5p-hbP" kind="relationship" relationship="rootViewController" id="oyy-iH-xjU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjZ-wS-ckv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="477"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="pIy-bg-pZX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rsK-yx-xKh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="Jij-xo-obP">
+                        <color key="badgeColor" red="0.0" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageReference key="selectedImage" image="gearshape.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="r9J-tj-Fcf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.074509803920000006" green="0.062745098040000002" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ic-Rt-5iN" kind="relationship" relationship="rootViewController" id="lPD-RE-xM9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j30-p5-xM1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="477"/>
+        </scene>
+        <!--Record-->
+        <scene sceneID="PXo-O1-2bx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Dw-hJ-C7l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Record" image="record.circle" catalog="system" id="mga-9Q-GKF">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageReference key="selectedImage" image="record.circle" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rm4-25-p2h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CLb-CL-OQu" kind="relationship" relationship="rootViewController" id="wat-9Q-w3O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9X-1i-tEE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3284.057971014493" y="476.78571428571428"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="LKo-fb-XfK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ppo-yX-w46" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="person.2.fill" catalog="system" id="cMc-6T-EfB">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageReference key="selectedImage" image="person.2.fill" catalog="system" symbolScale="default"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Tf0-DY-HDU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XDn-Mv-kq8" kind="relationship" relationship="rootViewController" id="sj6-YB-l5D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFh-0Z-ZEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1397.1014492753625" y="477.45535714285711"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Blue Gradient Elegant New Season Instagram Story (2)" width="1080" height="1920"/>
         <image name="Transparent-login" width="1294" height="2000"/>
         <image name="Transparent-signup" width="1294" height="2000"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="on the go (11)" width="1024" height="1024"/>
+        <image name="on the go (12)" width="1024" height="1024"/>
+        <image name="on the go (2)" width="768" height="768"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="record.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
