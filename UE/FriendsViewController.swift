@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController,UITableViewDataSource, UISearchBarDelegate {
 
+    
+    //search bar in friends view controller
+   
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,11 +25,21 @@ class FriendsViewController: UIViewController {
 
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-
+        //https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
+        tableView.dataSource = self
+        searchBar.delegate = self
+     
+        
         view.addGestureRecognizer(tap)
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
@@ -30,14 +48,5 @@ class FriendsViewController: UIViewController {
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
