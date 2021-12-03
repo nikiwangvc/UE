@@ -98,8 +98,24 @@ class NewSignUpViewController: UIViewController {
             let uidString = Auth.auth().currentUser?.uid
             self.defaults.set(Auth.auth().currentUser!.uid, forKey: "uid")
             self.db.collection("users").document(uidString!).setData([
-                            "initialized": self.email.text!
-                        ])
+                "email": self.email.text!,
+                "autoTripTracking": false,
+                "distanceUnit": "miles",
+                "sustainabilityUnit": "co2",
+                "friendsEmails": [],
+                "iHaveNotAcceptedYet": [],
+                "theyHaveNotAcceptedYet": [],
+                "co2": 0,
+                "kilometersTraveled": 0,
+                "formOfTransport": "electric car",
+                "secondsElapsed": 0,
+                "tripInProgress": false,
+                "dayCO2": 0,
+                "weekCO2": 0,
+                "totalCO2": 0,
+                "graphScale": "week",
+                "trips": []
+            ])
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
             vc?.modalPresentationStyle = .overFullScreen
