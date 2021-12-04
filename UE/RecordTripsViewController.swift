@@ -149,7 +149,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
+        
 
         // Connect data:
 
@@ -170,7 +170,6 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     }
 
     
-
     // Number of columns of data
 
    func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -181,6 +180,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
    
 
+    
    // The number of rows of data
 
    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -213,7 +213,9 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
    }
 
-
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: transportPickerData[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
 
     //Calls this function when the tap is recognized.
 

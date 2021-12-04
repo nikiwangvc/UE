@@ -4,19 +4,24 @@
 //
 //  Created by Niki Wang on 11/16/21.
 //
-
+import SwiftUI
 import UIKit
 import FirebaseAuth
 import Firebase
 
+
+
+
 class NewLoginViewController: UIViewController {
 
+    
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var forgotPassword: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     let defaults = UserDefaults.standard
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+50)
@@ -28,8 +33,6 @@ class NewLoginViewController: UIViewController {
 
         view.addGestureRecognizer(tap)
     }
-
-    
 
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
