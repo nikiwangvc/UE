@@ -14,6 +14,7 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
     var thisUid = "not assigned yet"
     
     override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear Trip History")
         super.viewWillAppear(animated)
         thisUid = defaults.object(forKey: "uid") as! String ?? "no uid yet"
         let settings = FirestoreSettings()
@@ -51,7 +52,24 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
                             counter += 1
                         }
                         print("retrievedTripArray \(retrievedTripArray)")
+                        
+                        var dateArray: [[Double]] = []
+                        var last1 = 0.0
+                        var last2 = 0.0
+                        var last3 = 0.0
                         for trip in retrievedTripArray{
+                            if(trip[1] == last1 && trip[2] == last2 && trip[3] == last3){
+                                dateArray[dateArray.count - 1][0] += trip[0]
+                            } else {
+                                dateArray.append(trip)
+                                last1 = trip[1]
+                                last2 = trip[2]
+                                last3 = trip[3]
+                            }
+                        }
+                        print("dateArray \(dateArray)")
+
+                        for trip in dateArray{
                             print("trip[0] \(trip[0])")
                             print("trip[1] \(trip[1])")
                             let formatter = DateFormatter()

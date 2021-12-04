@@ -37,6 +37,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     var transportRetrieved = false
 
     override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
         super.viewWillAppear(animated)
         title = "Record"
 
@@ -76,6 +77,7 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
     }
     
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
     
         // Connect data:
@@ -92,27 +94,32 @@ class RecordTripsViewController: UIViewController, CLLocationManagerDelegate, UI
 
     // Number of columns of data
    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       print("numberOfComponents")
        return 1
    }
 
    // The number of rows of data
    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       print("pickerView number of rows of data")
        return transportPickerData.count
    }
 
-   // The data to return fopr the row and component (column) that's being passed in
+   // The data to return for the row and component (column) that's being passed in
    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       let currentTransportIndex = transportPicker.selectedRow(inComponent: 0).description
-       print("currentTransportIndex \(currentTransportIndex)")
-       if(self.transportRetrieved){
-           self.db.collection("users").document(thisUid).updateData([
-               "formOfTransport": Int(currentTransportIndex)
-           ])
-       }
+       print("pickerView data to return for the row and component")
+       
        return transportPickerData[row]
    }
 
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        print("pickerView NSAttributed string")
+        let currentTransportIndex = transportPicker.selectedRow(inComponent: 0).description
+        print("currentTransportIndex \(currentTransportIndex)")
+        if(self.transportRetrieved){
+            self.db.collection("users").document(thisUid).updateData([
+                "formOfTransport": Int(currentTransportIndex)
+            ])
+        }
         return NSAttributedString(string: transportPickerData[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 
