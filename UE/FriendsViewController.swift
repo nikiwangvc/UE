@@ -1,9 +1,4 @@
-//
-//  FriendsViewController.swift
-//  UE
-//
-//  Created by mac pro on 11/16/21.
-//
+//  Created by Jeffrey Kozik on 11/16/21.
 
 import UIKit
 import Firebase
@@ -13,7 +8,6 @@ import FirebaseAuth
 class FriendsViewController: UIViewController {
     
     //search bar in friends view controller
-   
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
@@ -28,8 +22,6 @@ class FriendsViewController: UIViewController {
         //https://github.com/codepath/ios_guides/wiki/Search-Bar-Guide
 //        tableView.dataSource = self
 //        searchBar.delegate = self
-     
-        
         view.addGestureRecognizer(tap)
     }
 
@@ -46,7 +38,4 @@ class FriendsViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-    
-
 }

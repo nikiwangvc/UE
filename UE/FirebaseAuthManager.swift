@@ -1,9 +1,4 @@
-//
-//  FirebaseAuthManager.swift
-//  UE
-//
 //  Created by Niki Wang on 11/15/21.
-//
 
 import FirebaseAuth
 import UIKit

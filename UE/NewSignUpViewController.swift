@@ -1,16 +1,10 @@
-//
-//  NewSignUpViewController.swift
-//  UE
-//
 //  Created by Niki Wang on 11/16/21.
-//
 
 import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseCore
 import FirebaseFirestore
-//import FirebaseFirestoreSwift
 
 class NewSignUpViewController: UIViewController {
 
@@ -23,12 +17,11 @@ class NewSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+50)
-        // [START setup]
+        
         let settings = FirestoreSettings()
-
         Firestore.firestore().settings = settings
-        // [END setup]
         db = Firestore.firestore()
+        
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
@@ -69,7 +62,7 @@ class NewSignUpViewController: UIViewController {
             // Create OK button with action handler
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
-             })
+            })
             
             //Add OK button to a dialog message
             dialogMessage.addAction(ok)

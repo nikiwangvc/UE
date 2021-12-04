@@ -1,9 +1,4 @@
-//
-//  TripHistoryViewController.swift
-//  UE
-//
-//  Created by mac pro on 11/16/21.
-//
+//  Created by Jeffrey Kozik on 11/16/21.
 
 import UIKit
 import Charts
@@ -14,7 +9,6 @@ import FirebaseFirestore
 class TripHistoryViewController: UIViewController, ChartViewDelegate {
 
     var lineChart = LineChartView()
-    
     var db: Firestore!
     let defaults = UserDefaults.standard
     var thisUid = "not assigned yet"
@@ -22,22 +16,14 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         thisUid = defaults.object(forKey: "uid") as! String ?? "no uid yet"
-
         let settings = FirestoreSettings()
-
         Firestore.firestore().settings = settings
-
         db = Firestore.firestore()
+        
         lineChart.delegate = self
         // Do any additional setup after loading the view.
         //https://www.youtube.com/watch?v=J9hl7HHXNHU
-
 //    }
-    
-
-//
-//
-//
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
         
@@ -47,36 +33,20 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
         view.addSubview(lineChart)
         
         var entries = [ChartDataEntry]()
-        
-//        insert mock data
-//        for x in 0..<10{
-//            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
-//        }
         let docRef1 = db.collection("users").document(thisUid)
-        
         docRef1.getDocument{ (document, error) in
-
             if let document = document {
-
                 let numTrips: Int = document.get("numTrips") as! Int
                 print("numTrips \(numTrips)")
-                
-                
-                
-                
-                
                 let docRef2 = self.db.collection("users").document(self.thisUid).collection("trips").document("document")
-
                 docRef2.getDocument{ (document2, error) in
-
                     if let document2 = document2 {
-
                         var counter = 1
                         var retrievedTripArray: [[Double]] = []
                         
                         while(counter <= numTrips){
                             let countString = String(counter) as! String
-                                let thisTrip =  document2.get(countString) as! [Double]
+                            let thisTrip =  document2.get(countString) as! [Double]
                             retrievedTripArray.append(thisTrip)
                             counter += 1
                         }
@@ -95,13 +65,12 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
                             entries.append(ChartDataEntry(x: unixtime!, y: trip[0]))
                         }
                         
-                        
                         let xAxis = self.lineChart.xAxis
                         xAxis.labelPosition = .bottom
                         xAxis.labelCount = entries.count
                         xAxis.drawLabelsEnabled = true
                         xAxis.drawLimitLinesBehindDataEnabled = true
-//                        XAxis.avoidFirstLastClippingEnabled = true
+//                      XAxis.avoidFirstLastClippingEnabled = true
                         
                         // set the x values date formatter
                         let xValuesNumberFormatter = ChartXAxisFormatter()
@@ -115,9 +84,7 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
                         let data = LineChartData(dataSet: set)
                         self.lineChart.data = data
                     }
-                    
                 }
-
             }
         }
     }
@@ -125,6 +92,5 @@ class TripHistoryViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Statistics"
-        
     }
 }

@@ -1,9 +1,4 @@
-//
-//  ChartXAxisFormatter.swift
-//  UE
-//
-//  Created by Niki Wang on 12/3/21.
-//
+//  Created by Jeffrey Kozik on 12/3/21.
 
 import Foundation
 import Charts
