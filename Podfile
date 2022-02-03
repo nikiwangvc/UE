@@ -6,6 +6,8 @@ target 'UE' do
   use_frameworks!
 
   # Pods for UE
+pod'Charts'
+
   
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
@@ -16,6 +18,7 @@ target 'UE' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod'Firebase/Core'
   pod'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   target 'UETests' do
     inherit! :search_paths

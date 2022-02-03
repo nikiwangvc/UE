@@ -3,7 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app uses your location to estimate how much you're helping the environment.</string>
+	<string>Urban Earth uses your location so that you can track how sustainably you travel every day!</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Urban Earth uses your location so that you can track how sustainably you travel every day!</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(Urban-Earth2.UE)</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -23,18 +38,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>None</string>
-			<key>CFBundleURLName</key>
-			<string>auth0</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>$(Urban-Earth.UE)</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>
